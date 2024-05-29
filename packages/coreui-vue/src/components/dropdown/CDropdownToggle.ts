@@ -19,6 +19,13 @@ const CDropdownToggle = defineComponent({
   name: 'CDropdownToggle',
   props: {
     /**
+     * Component used for the root node. Either a string to use a HTML element or a component.
+     */
+    as: {
+      type: String,
+      default: 'button',
+    },
+    /**
      * Sets the color context of the component to one of CoreUI’s themed colors.
      *
      * @values 'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'light'
@@ -32,13 +39,6 @@ const CDropdownToggle = defineComponent({
       default: true,
     },
     /**
-     * Component used for the root node. Either a string to use a HTML element or a component.
-     */
-    component: {
-      type: String,
-      default: 'button',
-    },
-    /**
      * Create a custom toggler which accepts any content.
      */
     custom: Boolean,
@@ -49,7 +49,7 @@ const CDropdownToggle = defineComponent({
     /**
      * If a dropdown `variant` is set to `nav-item` then render the toggler as a link instead of a button.
      *
-     * @since v5.0.0-rc.0
+     * @since v5.0.0
      */
     navLink: {
       type: Boolean,
@@ -162,35 +162,35 @@ const CDropdownToggle = defineComponent({
             }),
           )
         : dropdownVariant === 'nav-item' && props.navLink
-        ? h(
-            'a',
-            {
-              href: '#',
-              ...togglerProps.value,
-              role: 'button',
-              ref: dropdownToggleRef,
-            },
-            { default: () => slots.default && slots.default() },
-          )
-        : h(
-            CButton,
-            {
-              ...togglerProps.value,
-              color: props.color,
-              component: props.component,
-              disabled: props.disabled,
-              shape: props.shape,
-              size: props.size,
-              variant: props.variant,
-              ref: (el) => {
-                togglerRef.value = el
+          ? h(
+              'a',
+              {
+                href: '#',
+                ...togglerProps.value,
+                role: 'button',
+                ref: dropdownToggleRef,
               },
-            },
-            () =>
-              props.split
-                ? h('span', { class: 'visually-hidden' }, 'Toggle Dropdown')
-                : slots.default && slots.default(),
-          )
+              { default: () => slots.default && slots.default() },
+            )
+          : h(
+              CButton,
+              {
+                ...togglerProps.value,
+                as: props.as,
+                color: props.color,
+                disabled: props.disabled,
+                shape: props.shape,
+                size: props.size,
+                variant: props.variant,
+                ref: (el) => {
+                  togglerRef.value = el
+                },
+              },
+              () =>
+                props.split
+                  ? h('span', { class: 'visually-hidden' }, 'Toggle Dropdown')
+                  : slots.default && slots.default(),
+            )
   },
 })
 

@@ -102,7 +102,7 @@ Inline text can use any typical inline HTML element (be it a `<span>`, `<small>`
     <CFormInput type="password" id="inputPassword6" aria-describedby="passwordHelpInline" />
   </CCol>
   <CCol xs="auto">
-    <CFormText component="span" id="passwordHelpInline">
+    <CFormText as="span" id="passwordHelpInline">
       Must be 8-20 characters long.
     </CFormText>
   </CCol>
@@ -119,7 +119,7 @@ Inline text can use any typical inline HTML element (be it a `<span>`, `<small>`
     <CFormInput type="password" id="inputPassword6" aria-describedby="passwordHelpInline" />
   </CCol>
   <CCol xs="auto">
-    <CFormText component="span" id="passwordHelpInline">
+    <CFormText as="span" id="passwordHelpInline">
       Must be 8-20 characters long.
     </CFormText>
   </CCol>
@@ -155,7 +155,7 @@ However, if your form also includes custom button-like elements such as `<CButto
     <div class="mb-3">
       <CFormCheck id="disabledFieldsetCheck" label="Can't check this" disabled />
     </div>
-    <CButton type="submit">Submit</CButton>
+    <CButton color="primary" type="submit">Submit</CButton>
   </fieldset>
 </CForm>
 :::
@@ -176,7 +176,7 @@ However, if your form also includes custom button-like elements such as `<CButto
     <div class="mb-3">
       <CFormCheck id="disabledFieldsetCheck" label="Can't check this" disabled />
     </div>
-    <CButton type="submit">Submit</CButton>
+    <CButton color="primary" type="submit">Submit</CButton>
   </fieldset>
 </CForm>
 ```

@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Introduction
 name: Introduction
 description: CoreUI for Vue.js is UI Component library written in TypeScript, and ready for your next Vue.js project. Learn how to include CoreUI for Vue.js in your project.
 menu: Getting started
@@ -9,36 +9,74 @@ menu: Getting started
 
 ### Npm
 
+<CTabs :activeItemKey="1">
+  <CTabList class="docs-code-tabs" variant="underline-border">
+    <CTab :itemKey="1">CoreUI</CTab>
+    <CTab :itemKey="2">CoreUI PRO</CTab>
+  </CTabList>
+  <CTabContent class="docs-code-tab-content">
+    <CTabPanel :itemKey="1">
+    
 ```bash
 npm install @coreui/vue @coreui/coreui
 ```
-
-If you use CoreUI PRO version.
+</CTabPanel>
+    <CTabPanel :itemKey="2">
 
 ```bash
 npm install @coreui/vue-pro @coreui/coreui-pro
 ```
+</CTabPanel>
+  </CTabContent>
+</CTabs>
+
 
 ### Yarn
 
+<CTabs :activeItemKey="1">
+  <CTabList class="docs-code-tabs" variant="underline-border">
+    <CTab :itemKey="1">CoreUI</CTab>
+    <CTab :itemKey="2">CoreUI PRO</CTab>
+  </CTabList>
+  <CTabContent class="docs-code-tab-content">
+    <CTabPanel :itemKey="1">
+    
 ```bash
 yarn add @coreui/vue @coreui/coreui
 ```
-
-If you use CoreUI PRO version.
+</CTabPanel>
+    <CTabPanel :itemKey="2">
 
 ```bash
 yarn add @coreui/vue-pro @coreui/coreui-pro
 ```
+</CTabPanel>
+  </CTabContent>
+</CTabs>
 
 ## Using components
 
-```ts
+<CTabs :activeItemKey="1">
+  <CTabList class="docs-code-tabs" variant="underline-border">
+    <CTab :itemKey="1">CoreUI</CTab>
+    <CTab :itemKey="2">CoreUI PRO</CTab>
+  </CTabList>
+  <CTabContent class="docs-code-tab-content">
+    <CTabPanel :itemKey="1">
+    
+```js
 import { CAlert } from '@coreui/vue';
+```
+</CTabPanel>
+    <CTabPanel :itemKey="2">
 
-// CoreUI PRO version
+```js
 import { CAlert } from '@coreui/vue-pro';
 ```
+</CTabPanel>
+  </CTabContent>
+</CTabs>
+
 
 ## Stylesheets
 
@@ -48,12 +86,26 @@ Vue components are styled using the `@coreui/coreui` or `@coreui/coreui-pro` CSS
 
 ###### Basic usage
 
+<CTabs :activeItemKey="1">
+  <CTabList class="docs-code-tabs" variant="underline-border">
+    <CTab :itemKey="1">CoreUI</CTab>
+    <CTab :itemKey="2">CoreUI PRO</CTab>
+  </CTabList>
+  <CTabContent class="docs-code-tab-content">
+    <CTabPanel :itemKey="1">
+    
 ```js
 import '@coreui/coreui/dist/css/coreui.min.css'
+```
+</CTabPanel>
+    <CTabPanel :itemKey="2">
 
-// CoreUI PRO version
+```js
 import '@coreui/coreui-pro/dist/css/coreui.min.css'
 ```
+</CTabPanel>
+  </CTabContent>
+</CTabs>
 
 ### Bootstrap CSS files
 

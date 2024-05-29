@@ -24,7 +24,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
   <CCardBody>
     <CCardTitle>Card title</CCardTitle>
     <CCardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 :::
@@ -34,7 +34,7 @@ Below is an example of a basic card with mixed content and a fixed width. Cards 
   <CCardBody>
     <CCardTitle>Card title</CCardTitle>
     <CCardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 ```
@@ -226,7 +226,7 @@ Add an optional header and/or footer within a card.
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 :::
@@ -236,30 +236,30 @@ Add an optional header and/or footer within a card.
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 ```
 
-Card headers can be styled by adding ex. `component="h5"`.
+Card headers can be styled by adding ex. `as="h5"`.
 
 ::: demo
 <CCard>
-  <CCardHeader component="h5">Header</CCardHeader>
+  <CCardHeader as="h5">Header</CCardHeader>
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 :::
 ```vue
 <CCard>
-  <CCardHeader component="h5">Header</CCardHeader>
+  <CCardHeader as="h5">Header</CCardHeader>
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 ```
@@ -293,7 +293,7 @@ Card headers can be styled by adding ex. `component="h5"`.
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
   <CCardFooter class="text-body-secondary">2 days ago</CCardFooter>
 </CCard>
@@ -304,7 +304,7 @@ Card headers can be styled by adding ex. `component="h5"`.
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
   <CCardFooter class="text-body-secondary">2 days ago</CCardFooter>
 </CCard>
@@ -325,7 +325,7 @@ Using the grid, wrap cards in columns and rows as needed.
       <CCardBody>
         <CCardTitle>Special title treatment</CCardTitle>
         <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-        <CButton href="#">Go somewhere</CButton>
+        <CButton color="primary" href="#">Go somewhere</CButton>
       </CCardBody>
     </CCard>
   </CCol>
@@ -334,7 +334,7 @@ Using the grid, wrap cards in columns and rows as needed.
       <CCardBody>
         <CCardTitle>Special title treatment</CCardTitle>
         <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-        <CButton href="#">Go somewhere</CButton>
+        <CButton color="primary" href="#">Go somewhere</CButton>
       </CCardBody>
     </CCard>
   </CCol>
@@ -347,7 +347,7 @@ Using the grid, wrap cards in columns and rows as needed.
       <CCardBody>
         <CCardTitle>Special title treatment</CCardTitle>
         <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-        <CButton href="#">Go somewhere</CButton>
+        <CButton color="primary" href="#">Go somewhere</CButton>
       </CCardBody>
     </CCard>
   </CCol>
@@ -356,7 +356,7 @@ Using the grid, wrap cards in columns and rows as needed.
       <CCardBody>
         <CCardTitle>Special title treatment</CCardTitle>
         <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-        <CButton href="#">Go somewhere</CButton>
+        <CButton color="primary" href="#">Go somewhere</CButton>
       </CCardBody>
     </CCard>
   </CCol>
@@ -372,14 +372,14 @@ Use some of [available sizing utilities](https://coreui.io/docs/utilities/sizing
   <CCardBody>
     <CCardTitle>Card title</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 <CCard class="w-50">
   <CCardBody>
     <CCardTitle>Card title</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 :::
@@ -388,14 +388,14 @@ Use some of [available sizing utilities](https://coreui.io/docs/utilities/sizing
   <CCardBody>
     <CCardTitle>Card title</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 <CCard class="w-50">
   <CCardBody>
     <CCardTitle>Card title</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 ```
@@ -409,7 +409,7 @@ Use custom CSS in your stylesheets or as inline styles to set a width.
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 :::
@@ -418,7 +418,7 @@ Use custom CSS in your stylesheets or as inline styles to set a width.
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 ```
@@ -432,21 +432,21 @@ You can instantly change the text arrangement of any card—in its whole or spec
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 <CCard class="text-center" style="width: 18rem">
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 <CCard class="text-end" style="width: 18rem">
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 :::
@@ -455,21 +455,21 @@ You can instantly change the text arrangement of any card—in its whole or spec
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 <CCard class="text-center" style="width: 18rem">
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 <CCard class="text-end" style="width: 18rem">
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 ```
@@ -510,7 +510,7 @@ Add some navigation to a `<CCardHeader>` with our `<CNav>` component.
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 :::
@@ -546,7 +546,7 @@ Add some navigation to a `<CCardHeader>` with our `<CNav>` component.
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 ```
@@ -583,7 +583,7 @@ Add some navigation to a `<CCardHeader>` with our `<CNav>` component.
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 :::
@@ -619,7 +619,7 @@ Add some navigation to a `<CCardHeader>` with our `<CNav>` component.
   <CCardBody>
     <CCardTitle>Special title treatment</CCardTitle>
     <CCardText>With supporting text below as a natural lead-in to additional content.</CCardText>
-    <CButton href="#">Go somewhere</CButton>
+    <CButton color="primary" href="#">Go somewhere</CButton>
   </CCardBody>
 </CCard>
 ```
@@ -771,6 +771,49 @@ Use `color` property to change the appearance of a card.
   { color: 'dark', textColor: 'white' }
 ]">
   <CCard :color="item.color" :text-color="item.textColor" class="mb-3" style="max-width: 18rem">
+    <CCardHeader>Header</CCardHeader>
+    <CCardBody>
+      <CCardTitle>{{item.color}} card title</CCardTitle>
+      <CCardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CCardText>
+    </CCardBody>
+  </CCard>
+</template>
+```
+
+You can also apply contextual variations with the `textBgColor` property, which automatically sets the text color to ensure compliance with the WCAG 4.5:1 contrast ratio standard for enhanced accessibility.
+
+::: demo
+<template v-for="(item) in [
+  { color: 'primary' },
+  { color: 'secondary' },
+  { color: 'success' },
+  { color: 'danger' },
+  { color: 'warning' },
+  { color: 'info' },
+  { color: 'light' },
+  { color: 'dark' }
+]">
+  <CCard :textBgColor="item.color" class="mb-3" style="max-width: 18rem">
+    <CCardHeader>Header</CCardHeader>
+    <CCardBody>
+      <CCardTitle>{{item.color}} card title</CCardTitle>
+      <CCardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CCardText>
+    </CCardBody>
+  </CCard>
+</template>
+:::
+```vue
+<template v-for="(item) in [
+  { color: 'primary' },
+  { color: 'secondary' },
+  { color: 'success' },
+  { color: 'danger' },
+  { color: 'warning' },
+  { color: 'info' },
+  { color: 'light' },
+  { color: 'dark' }
+]">
+  <CCard :textBgColor="item.color" class="mb-3" style="max-width: 18rem">
     <CCardHeader>Header</CCardHeader>
     <CCardBody>
       <CCardTitle>{{item.color}} card title</CCardTitle>

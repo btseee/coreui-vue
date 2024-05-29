@@ -3,10 +3,10 @@ import type { Placement } from '@popperjs/core'
 
 import { usePopper } from '../../composables'
 import type { Triggers } from '../../types'
-import { isRTL } from '../../utils'
+import { getNextActiveElement, isRTL } from '../../utils'
 
 import type { Alignments } from './types'
-import { getNextActiveElement, getPlacement } from './utils'
+import { getPlacement } from './utils'
 
 const CDropdown = defineComponent({
   name: 'CDropdown',
@@ -62,7 +62,7 @@ const CDropdown = defineComponent({
     /**
      * Appends the vue dropdown menu to a specific element. You can pass an HTML element or function that returns a single element. By default `document.body`.
      *
-     * @since v5.0.0-rc.0
+     * @since v5.0.0
      */
     container: {
       type: [Object, String] as PropType<HTMLElement | (() => HTMLElement) | string>,
@@ -115,7 +115,7 @@ const CDropdown = defineComponent({
     /**
      * Generates dropdown menu using Teleport.
      *
-     * @since v5.0.0-rc.0
+     * @since v5.0.0
      */
     teleport: {
       type: Boolean,
@@ -228,6 +228,7 @@ const CDropdown = defineComponent({
       ) {
         event.preventDefault()
         const target = event.target as HTMLElement
+        // eslint-disable-next-line unicorn/prefer-spread
         const items: HTMLElement[] = Array.from(
           dropdownMenuRef.value.querySelectorAll('.dropdown-item:not(.disabled):not(:disabled)'),
         )
