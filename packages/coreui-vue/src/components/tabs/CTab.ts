@@ -4,6 +4,12 @@ const CTab = defineComponent({
   name: 'CTab',
   props: {
     /**
+     * Toggle the disabled state for the component.
+     *
+     * @since 5.4.0
+     */
+    disabled: Boolean,
+    /**
      * Item key.
      */
     itemKey: {
@@ -13,7 +19,7 @@ const CTab = defineComponent({
   },
   setup(props, { slots }) {
     const activeItemKey = inject('activeItemKey') as Ref<number | string>
-    const id = inject('id') as Ref<number | string>
+    const id = inject('id')
     const setActiveItemKey = inject('setActiveItemKey') as (key: number | string) => void
 
     const isActive = () => props.itemKey === activeItemKey.value
@@ -28,12 +34,13 @@ const CTab = defineComponent({
               active: isActive(),
             },
           ],
-          id: `${id.value}${props.itemKey}-tab`,
+          id: `${props.itemKey}-tab-${id}`,
           role: 'tab',
           tabindex: isActive() ? 0 : -1,
           type: 'button',
-          'aria-controls': `${id.value}${props.itemKey}-tab-pane`,
+          'aria-controls': `${props.itemKey}-tab-panel-${id}`,
           'aria-selected': isActive(),
+          disabled: props.disabled,
           onClick: () => setActiveItemKey(props.itemKey),
           onFocus: () => setActiveItemKey(props.itemKey),
         },

@@ -4,6 +4,15 @@ import { CFormFloating } from './CFormFloating'
 import { CFormLabel } from './CFormLabel'
 import { CFormText } from './CFormText'
 
+import type { ComponentProps } from '../../utils/ComponentProps'
+
+interface CFormControlWrapperProps extends ComponentProps<typeof CFormControlValidation> {
+  floatingLabel?: string
+  id?: string
+  label?: string
+  text?: string
+}
+
 const CFormControlWrapper = defineComponent({
   name: 'CFormControlWrapper',
   inheritAttrs: false,
@@ -18,7 +27,9 @@ const CFormControlWrapper = defineComponent({
     /**
      * @ignore
      */
-    id: String,
+    id: {
+      type: String,
+    },
     /**
      * Add a caption for a component.
      *
@@ -32,7 +43,7 @@ const CFormControlWrapper = defineComponent({
      */
     text: String,
   },
-  setup(props, { slots }) {
+  setup(props: CFormControlWrapperProps, { slots }) {
     const formControlValidation = () =>
       h(
         CFormControlValidation,
@@ -41,7 +52,6 @@ const CFormControlWrapper = defineComponent({
           feedback: props.feedback,
           feedbackInvalid: props.feedbackInvalid,
           feedbackValid: props.feedbackValid,
-          floatingLabel: props.floatingLabel,
           invalid: props.invalid,
           tooltipFeedback: props.tooltipFeedback,
           valid: props.valid,

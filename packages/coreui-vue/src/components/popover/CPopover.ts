@@ -1,11 +1,11 @@
-import { defineComponent, h, onMounted, PropType, ref, RendererElement, Transition } from 'vue'
+import { defineComponent, h, PropType, ref, RendererElement, Transition, useId } from 'vue'
 import type { Placement } from '@popperjs/core'
 
 import { CConditionalTeleport } from '../conditional-teleport'
 import { usePopper } from '../../composables'
 import type { Placements, Triggers } from '../../types'
 import { executeAfterTransition } from '../../utils/transition'
-import { getRTLPlacement, getUID } from '../../utils'
+import { getRTLPlacement } from '../../utils'
 
 const CPopover = defineComponent({
   name: 'CPopover',
@@ -23,7 +23,7 @@ const CPopover = defineComponent({
     /**
      * Appends the vue popover to a specific element. You can pass an HTML element or function that returns a single element. By default `document.body`.
      *
-     * @since v5.0.0
+     * @since 5.0.0
      */
     container: {
       type: [Object, String] as PropType<HTMLElement | (() => HTMLElement) | string>,
@@ -117,9 +117,10 @@ const CPopover = defineComponent({
   setup(props, { attrs, slots, emit }) {
     const togglerRef = ref()
     const popoverRef = ref()
-    const uID = ref()
     const visible = ref(props.visible)
+
     const { initPopper, destroyPopper } = usePopper()
+    const uniqueId = `popover-${useId()}`
 
     const delay =
       typeof props.delay === 'number' ? { show: props.delay, hide: props.delay } : props.delay
@@ -147,10 +148,6 @@ const CPopover = defineComponent({
       ],
       placement: getRTLPlacement(props.placement, togglerRef.value),
     }
-
-    onMounted(() => {
-      uID.value = getUID('popover')
-    })
 
     const handleEnter = (el: RendererElement, done: () => void) => {
       emit('show')
@@ -211,7 +208,7 @@ const CPopover = defineComponent({
                       },
                       attrs.class,
                     ],
-                    id: uID.value,
+                    id: uniqueId,
                     ref: popoverRef,
                     role: 'tooltip',
                   },
@@ -240,7 +237,7 @@ const CPopover = defineComponent({
       ),
       slots.toggler &&
         slots.toggler({
-          id: visible.value ? uID.value : null,
+          id: visible.value ? uniqueId : null,
           on: {
             click: (event: Event) =>
               props.trigger.includes('click') && toggleVisible(event, !visible.value),

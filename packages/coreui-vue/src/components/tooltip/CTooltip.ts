@@ -1,11 +1,11 @@
-import { defineComponent, h, onMounted, PropType, ref, RendererElement, Transition } from 'vue'
+import { defineComponent, h, PropType, ref, RendererElement, Transition, useId } from 'vue'
 import type { Placement } from '@popperjs/core'
 
 import { CConditionalTeleport } from '../conditional-teleport'
 import { usePopper } from '../../composables'
 import type { Placements, Triggers } from '../../types'
 import { executeAfterTransition } from '../../utils/transition'
-import { getRTLPlacement, getUID } from '../../utils'
+import { getRTLPlacement } from '../../utils'
 
 const CTooltip = defineComponent({
   name: 'CTooltip',
@@ -23,7 +23,7 @@ const CTooltip = defineComponent({
     /**
      * Appends the vue tooltip to a specific element. You can pass an HTML element or function that returns a single element. By default `document.body`.
      *
-     * @since v5.0.0
+     * @since 5.0.0
      */
     container: {
       type: [Object, String] as PropType<HTMLElement | (() => HTMLElement) | string>,
@@ -113,9 +113,10 @@ const CTooltip = defineComponent({
   setup(props, { attrs, slots, emit }) {
     const togglerRef = ref()
     const tooltipRef = ref()
-    const uID = ref()
     const visible = ref(props.visible)
+
     const { initPopper, destroyPopper } = usePopper()
+    const uniqueId = `tooltip-${useId()}`
 
     const delay =
       typeof props.delay === 'number' ? { show: props.delay, hide: props.delay } : props.delay
@@ -143,10 +144,6 @@ const CTooltip = defineComponent({
       ],
       placement: getRTLPlacement(props.placement, togglerRef.value),
     }
-
-    onMounted(() => {
-      uID.value = getUID('tooltip')
-    })
 
     const handleEnter = (el: RendererElement, done: () => void) => {
       emit('show')
@@ -207,7 +204,7 @@ const CTooltip = defineComponent({
                       },
                       attrs.class,
                     ],
-                    id: uID.value,
+                    id: uniqueId,
                     ref: tooltipRef,
                     role: 'tooltip',
                   },
@@ -228,7 +225,7 @@ const CTooltip = defineComponent({
       ),
       slots.toggler &&
         slots.toggler({
-          id: visible.value ? uID.value : null,
+          id: visible.value ? uniqueId : null,
           on: {
             click: (event: Event) =>
               props.trigger.includes('click') && toggleVisible(event, !visible.value),

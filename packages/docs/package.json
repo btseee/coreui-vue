@@ -1,33 +1,36 @@
 {
   "name": "@coreui/vue-docs",
-  "version": "5.0.0",
+  "version": "5.4.1",
   "scripts": {
     "api": "vue-docgen -c build/docgen.config.js",
     "dev": "vuepress dev --clean-cache",
-    "build": "vuepress build"
+    "build": "vuepress build --debug"
   },
   "license": "MIT",
   "devDependencies": {
     "@coreui/chartjs": "^4.0.0",
-    "@coreui/coreui": "^5.0.2",
+    "@coreui/coreui": "^5.2.0",
     "@coreui/icons": "^3.0.1",
-    "@coreui/icons-vue": "^2.0.0",
+    "@coreui/icons-vue": "^2.2.0",
     "@coreui/utils": "^2.0.2",
     "@coreui/vue-chartjs": "^3.0.0",
-    "@docsearch/css": "^3.6.0",
-    "@docsearch/js": "^3.6.0",
-    "@vuepress/bundler-vite": "2.0.0-rc.12",
-    "@vuepress/plugin-active-header-links": "2.0.0-rc.31",
-    "@vuepress/plugin-back-to-top": "2.0.0-rc.31",
-    "@vuepress/plugin-container": "2.0.0-rc.28",
-    "@vuepress/plugin-git": "2.0.0-rc.31",
-    "@vuepress/plugin-prismjs": "2.0.0-rc.32",
-    "@vuepress/plugin-theme-data": "2.0.0-rc.31",
-    "@vuepress/plugin-register-components": "2.0.0-rc.31",
-    "@vuepress/plugin-toc": "2.0.0-rc.31",
+    "@docsearch/css": "^3.6.2",
+    "@docsearch/js": "^3.6.2",
+    "@vuepress/bundler-vite": "2.0.0-rc.18",
+    "@vuepress/bundler-webpack": "2.0.0-rc.18",
+    "@vuepress/plugin-active-header-links": "2.0.0-rc.55",
+    "@vuepress/plugin-git": "2.0.0-rc.56",
+    "@vuepress/plugin-markdown-container": "2.0.0-rc.54",
+    "@vuepress/plugin-prismjs": "2.0.0-rc.37",
+    "@vuepress/plugin-theme-data": "2.0.0-rc.57",
+    "@vuepress/plugin-register-components": "2.0.0-rc.54",
+    "@vuepress/plugin-toc": "2.0.0-rc.55",
+    "@vuepress/shared": "2.0.0-rc.18",
+    "@vuepress/utils": "2.0.0-rc.18",
+    "markdown-it-anchor": "^9.2.0",
     "markdown-it-include": "^2.0.0",
-    "sass": "^1.77.2",
+    "sass": "^1.80.4",
     "vue-docgen-cli": "^4.79.0",
-    "vuepress": "2.0.0-rc.12"
+    "vuepress": "2.0.0-rc.18"
   }
 }
